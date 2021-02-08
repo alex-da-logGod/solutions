@@ -1,0 +1,9 @@
+const num = prompt('Write a number', 5566);
+function colonOdd(num) {
+  let str = num.toString().split('')
+  return str.reduce((prev, curr, i , arr) => {
+    return prev += curr + (curr%2 !==0 && arr[i+1]%2 !==0 ? ':' : '')
+  },'')
+}
+
+console.log(colonOdd(num)); // 5:566
