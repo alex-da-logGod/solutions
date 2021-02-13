@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Great Demo on CodePen</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="slider">
+      <div class="slider-line">
+        <div class="item_1 it">1</div>
+        <div class="item_2 it">2</div>
+        <div class="item_3 it">3</div>
+        <div class="item_4 it">4</div>
+      </div>
+    </div>
+    <div class="btns">
+      <button class="prev">prev</button>
+      <button class="next">next</button>
+    </div>
+  </div>
+  
+</body>
+</html>
+
+
+
+* {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 800px;
+  height: 300px;
+  background-color: #ccc;
+  margin: 0 auto;
+}
+.slider {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  margin: 0 auto;
+}
+.item_1, .item_2, .item_3, .item_4 {
+  height: 100px;
+  width: 100px;
+  
+}
+.item_1 {
+  background-color: red;
+}
+.item_2 {
+  background-color: yellow;
+}
+.item_3 {
+  background-color: green;
+}
+.item_4 {
+  background-color: blue;
+}
+.slider-line {
+  width: 400px;
+  display: flex;
+  position: relative;
+}
+.btns {
+  text-align: center;
+  margin-top: 10px;
+  
+}
+
+
+let nextSlide = 0
+let sliderLine = document.querySelector('.slider-line')
+
+document.querySelector('.next').addEventListener('click', () => {
+  nextSlide += 100
+  if(nextSlide > 300) {
+    nextSlide = 0
+  }
+  sliderLine.style.left = -nextSlide + 'px'
+})
+document.querySelector('.prev').addEventListener('click', () => {
+  nextSlide -= 100
+  if(nextSlide < 0) {
+    nextSlide = 300
+  }
+  sliderLine.style.left = -nextSlide + 'px'
+})
