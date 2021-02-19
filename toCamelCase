@@ -1,0 +1,7 @@
+let toCamelCase = (str) => {
+  let string = str.split('-')
+  return string.map((item, i) => {
+     return i === 0 ? item : item.charAt(0).toUpperCase() + item.slice(1)
+  }).join('')
+}
+console.log(toCamelCase('my-awesome-string'))
