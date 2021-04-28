@@ -1,7 +1,19 @@
-function maskify(cc) {
+1) function maskify(cc) {
   const newArr = cc.slice(0,-4).split('').fill('#')
   const endArr = cc.slice(-4, cc.length)
   return (newArr.concat(endArr)).join('')
+}
+
+2) function mask(cc) {
+  return cc.slice(-4).padStart(cc.length,'#')
+}
+
+3) function maskify(cc) {
+  return '#'.repeat(cc.slice(0, -4).length) + cc.slice(-4);
+}
+
+4) function maskify(cc){
+  return cc.substr(0, cc.length - 4).replace(/./g, '#') + cc.substr(-4)
 }
 
 console.log(mask('11114444')) // ####4444
