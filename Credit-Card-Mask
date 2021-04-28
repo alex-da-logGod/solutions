@@ -1,0 +1,7 @@
+function maskify(cc) {
+  const newArr = cc.slice(0,-4).split('').fill('#')
+  const endArr = cc.slice(-4, cc.length)
+  return (newArr.concat(endArr)).join('')
+}
+
+console.log(mask('11114444')) // ####4444
